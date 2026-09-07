@@ -3,14 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Micro-Tool Hub</title>
+    <title>Micro-Tool Hub - أدوات مجانية للجميع</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; background: #f4f6f9; }
-        h1 { color: #333; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f4f6f9; color: #333; }
+        header { background: #1e293b; color: #fff; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: #38bdf8; }
+        nav { display: flex; gap: 15px; }
+        nav a { color: #fff; text-decoration: none; }
+        .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+        .hero { text-align: center; padding: 40px; background: linear-gradient(135deg, #1e293b, #0f172a); color: #fff; border-radius: 10px; margin-bottom: 40px; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 15px; }
+        .hero p { font-size: 1.2rem; color: #cbd5e1; }
+        .tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+        .tool-card { background: #fff; padding: 25px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); text-align: center; transition: 0.3s; }
+        .tool-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .tool-card h3 { color: #1e293b; margin-bottom: 10px; }
+        .tool-card p { color: #64748b; margin-bottom: 20px; }
+        .btn { display: inline-block; background: #38bdf8; color: #fff; padding: 10px 20px; border-radius: 5px; text-decoration: none; }
+        .footer { text-align: center; padding: 20px; background: #0f172a; color: #94a3b8; margin-top: 40px; }
+        @media (max-width: 768px) { .tools-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
-    <h1>Micro-Tool Hub</h1>
-    <p>����� ������ ������!</p>
+    <header>
+        <div class="logo">Micro-Tool Hub</div>
+        <nav>
+            <a href="#">الرئيسية</a>
+            <a href="#tools">الأدوات</a>
+            <a href="#earn">الربح</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>أدوات مجانية تحتاجها يومياً!</h1>
+        <p>كل ما تحتاجه في مكان واحد - حاسبات، محولات، ومولدات.</p>
+    </section>
+
+    <section class="container" id="tools">
+        <h2 style="text-align: center; margin-bottom: 30px;">أدواتنا</h2>
+        <div class="tools-grid">
+            <!-- أدوات عامة -->
+            <div class="tool-card">
+                <h3>📊 حاسبة النسبة المئوية</h3>
+                <p>احسب النسب بسهولة.</p>
+                <button class="btn" onclick="window.location.href='https://hhhjb779-jpg.github.io/tools/percent.html'">استخدم الأداة</button>
+            </div>
+            <div class="tool-card">
+                <h3>📅 حاسبة العمر</h3>
+                <p>احسب عمرك بالتفصيل.</p>
+                <button class="btn" onclick="window.location.href='https://hhhjb779-jpg.github.io/tools/age.html'">استخدم الأداة</button>
+            </div>
+            <div class="tool-card">
+                <h3>💱 محول العملات</h3>
+                <p>حول العملات الأساسية.</p>
+                <button class="btn" onclick="window.location.href='https://hhhjb779-jpg.github.io/tools/currency.html'">استخدم الأداة</button>
+            </div>
+            <div class="tool-card">
+                <h3>🔐 مولد كلمات المرور</h3>
+                <p>أنشئ كلمة مرور قوية.</p>
+                <button class="btn" onclick="window.location.href='https://hhhjb779-jpg.github.io/tools/password.html'">استخدم الأداة</button>
+            </div>
+            <!-- أدوات صحية -->
+            <div class="tool-card">
+                <h3>💪 حاسبة BMI</h3>
+                <p>احسب مؤشر كتلة جسمك.</p>
+                <button class="btn" onclick="window.location.href='https://hhhjb779-jpg.github.io/tools/bmi.html'">استخدم الأداة</button>
+            </div>
+            <div class="tool-card">
+                <h3>🔥 حاسبة السعرات الحرارية</h3>
+                <p>احسب سعراتك اليومية.</p>
+                <button class="btn" onclick="window.location.href='https://hhhjb779-jpg.github.io/tools/calories.html'">استخدم الأداة</button>
+            </div>
+            <!-- أدوات الطبخ -->
+            <div class="tool-card">
+                <h3>🍳 حاسبة تحويل المقادير</h3>
+                <p>حول الجرامات إلى أكواب.</p>
+                <button class="btn" onclick="window.location.href='https://hhhjb779-jpg.github.io/tools/cooking.html'">استخدم الأداة</button>
+            </div>
+            <!-- أدوات أخرى -->
+            <div class="tool-card">
+                <h3>🔤 عدّاد الكلمات</h3>
+                <p>احسب عدد الكلمات والحروف.</p>
+                <button class="btn" onclick="window.location.href='https://hhhjb779-jpg.github.io/tools/wordcount.html'">استخدم الأداة</button>
+            </div>
+            <div class="tool-card">
+                <h3>🎨 مولد الألوان</h3>
+                <p>أنشئ ألواناً عشوائية.</p>
+                <button class="btn" onclick="window.location.href='https://hhhjb779-jpg.github.io/tools/color.html'">استخدم الأداة</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" id="earn">
+        <h2 style="text-align: center; margin-bottom: 30px;">منصات الربح الموثوقة</h2>
+        <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+            <a href="https://cointiply.mobi/VOE90v" target="_blank" class="btn">Cointiply</a>
+            <a href="https://faucetpay.io/r/9834759" target="_blank" class="btn">FaucetPay</a>
+            <a href="https://www.coinpayu.com/?r=EeRd" target="_blank" class="btn">CoinPayu</a>
+            <a href="https://freecash.com/r/364JFQ" target="_blank" class="btn">Freecash</a>
+            <a href="https://pawns.app/?r=20432610" target="_blank" class="btn">Pawns.app</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2026 Micro-Tool Hub - جميع الحقوق محفوظة</p>
+    </footer>
 </body>
 </html>
