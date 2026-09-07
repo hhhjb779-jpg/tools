@@ -9,30 +9,22 @@
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f4f6f9; color: #333; }
         header { background: #1e293b; color: #fff; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
         .logo { font-size: 1.5rem; font-weight: bold; color: #38bdf8; }
-        nav { display: flex; gap: 15px; }
-        nav a { color: #fff; text-decoration: none; }
         .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
         .hero { text-align: center; padding: 40px; background: linear-gradient(135deg, #1e293b, #0f172a); color: #fff; border-radius: 10px; margin-bottom: 40px; }
-        .hero h1 { font-size: 2.5rem; margin-bottom: 15px; }
-        .hero p { font-size: 1.2rem; color: #cbd5e1; }
-        .tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
-        .tool-card { background: #fff; padding: 25px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); text-align: center; transition: 0.3s; }
-        .tool-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        .tool-card h3 { color: #1e293b; margin-bottom: 10px; }
-        .tool-card p { color: #64748b; margin-bottom: 20px; }
-        .btn { display: inline-block; background: #38bdf8; color: #fff; padding: 10px 20px; border-radius: 5px; text-decoration: none; }
+        .tool-section { background: #fff; padding: 30px; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .tool-section h2 { color: #1e293b; margin-bottom: 20px; }
+        .tool-section input, .tool-section textarea, .tool-section select { padding: 10px; border: 1px solid #cbd5e1; border-radius: 5px; margin: 5px; }
+        .tool-section button { background: #38bdf8; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; }
+        .tool-section h3 { margin-top: 15px; }
         .footer { text-align: center; padding: 20px; background: #0f172a; color: #94a3b8; margin-top: 40px; }
-        @media (max-width: 768px) { .tools-grid { grid-template-columns: 1fr; } }
+        .earn-links { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 20px; }
+        .earn-links a { background: #38bdf8; padding: 10px 20px; color: #fff; text-decoration: none; border-radius: 5px; }
+        @media (max-width: 768px) { .container { padding: 0 10px; } }
     </style>
 </head>
 <body>
     <header>
         <div class="logo">Micro-Tool Hub</div>
-        <nav>
-            <a href="#">الرئيسية</a>
-            <a href="#tools">الأدوات</a>
-            <a href="#earn">الربح</a>
-        </nav>
     </header>
 
     <section class="hero">
@@ -40,74 +32,175 @@
         <p>كل ما تحتاجه في مكان واحد - حاسبات، محولات، ومولدات.</p>
     </section>
 
-    <section class="container" id="tools">
-        <h2 style="text-align: center; margin-bottom: 30px;">أدواتنا</h2>
-        <div class="tools-grid">
-            <!-- أدوات عامة -->
-            <div class="tool-card">
-                <h3>📊 حاسبة النسبة المئوية</h3>
-                <p>احسب النسب بسهولة.</p>
-                <button class="btn" onclick="window.location.href='https://hhhjb779-jpg.github.io/tools/percent.html'">استخدم الأداة</button>
-            </div>
-            <div class="tool-card">
-                <h3>📅 حاسبة العمر</h3>
-                <p>احسب عمرك بالتفصيل.</p>
-                <button class="btn" onclick="window.location.href='https://hhhjb779-jpg.github.io/tools/age.html'">استخدم الأداة</button>
-            </div>
-            <div class="tool-card">
-                <h3>💱 محول العملات</h3>
-                <p>حول العملات الأساسية.</p>
-                <button class="btn" onclick="window.location.href='https://hhhjb779-jpg.github.io/tools/currency.html'">استخدم الأداة</button>
-            </div>
-            <div class="tool-card">
-                <h3>🔐 مولد كلمات المرور</h3>
-                <p>أنشئ كلمة مرور قوية.</p>
-                <button class="btn" onclick="window.location.href='https://hhhjb779-jpg.github.io/tools/password.html'">استخدم الأداة</button>
-            </div>
-            <!-- أدوات صحية -->
-            <div class="tool-card">
-                <h3>💪 حاسبة BMI</h3>
-                <p>احسب مؤشر كتلة جسمك.</p>
-                <button class="btn" onclick="window.location.href='https://hhhjb779-jpg.github.io/tools/bmi.html'">استخدم الأداة</button>
-            </div>
-            <div class="tool-card">
-                <h3>🔥 حاسبة السعرات الحرارية</h3>
-                <p>احسب سعراتك اليومية.</p>
-                <button class="btn" onclick="window.location.href='https://hhhjb779-jpg.github.io/tools/calories.html'">استخدم الأداة</button>
-            </div>
-            <!-- أدوات الطبخ -->
-            <div class="tool-card">
-                <h3>🍳 حاسبة تحويل المقادير</h3>
-                <p>حول الجرامات إلى أكواب.</p>
-                <button class="btn" onclick="window.location.href='https://hhhjb779-jpg.github.io/tools/cooking.html'">استخدم الأداة</button>
-            </div>
-            <!-- أدوات أخرى -->
-            <div class="tool-card">
-                <h3>🔤 عدّاد الكلمات</h3>
-                <p>احسب عدد الكلمات والحروف.</p>
-                <button class="btn" onclick="window.location.href='https://hhhjb779-jpg.github.io/tools/wordcount.html'">استخدم الأداة</button>
-            </div>
-            <div class="tool-card">
-                <h3>🎨 مولد الألوان</h3>
-                <p>أنشئ ألواناً عشوائية.</p>
-                <button class="btn" onclick="window.location.href='https://hhhjb779-jpg.github.io/tools/color.html'">استخدم الأداة</button>
-            </div>
+    <section class="container">
+        <!-- 1. حاسبة النسبة المئوية -->
+        <div class="tool-section">
+            <h2>📊 حاسبة النسبة المئوية</h2>
+            <p>ما هو <input type="number" id="p1" style="width: 80px;"> % من <input type="number" id="p2" style="width: 80px;"> ؟</p>
+            <button onclick="calculatePercent()">احسب</button>
+            <h3 id="percentResult"></h3>
         </div>
-    </section>
 
-    <section class="container" id="earn">
-        <h2 style="text-align: center; margin-bottom: 30px;">منصات الربح الموثوقة</h2>
-        <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
-            <a href="https://cointiply.mobi/VOE90v" target="_blank" class="btn">Cointiply</a>
-            <a href="https://faucetpay.io/r/9834759" target="_blank" class="btn">FaucetPay</a>
-            <a href="https://www.coinpayu.com/?r=EeRd" target="_blank" class="btn">CoinPayu</a>
-            <a href="https://freecash.com/r/364JFQ" target="_blank" class="btn">Freecash</a>
-            <a href="https://pawns.app/?r=20432610" target="_blank" class="btn">Pawns.app</a>
+        <!-- 2. حاسبة العمر -->
+        <div class="tool-section">
+            <h2>📅 حاسبة العمر</h2>
+            <p>تاريخ ميلادك: <input type="date" id="dob"></p>
+            <button onclick="calculateAge()">احسب</button>
+            <h3 id="ageResult"></h3>
+        </div>
+
+        <!-- 3. محول العملات -->
+        <div class="tool-section">
+            <h2>💱 محول العملات</h2>
+            <p>المبلغ: <input type="number" id="amount" style="width: 100px;"></p>
+            <p>من <select id="from"><option value="1">دولار</option><option value="0.85">يورو</option></select> إلى <select id="to"><option value="1">دولار</option><option value="0.85">يورو</option></select></p>
+            <button onclick="convertCurrency()">تحويل</button>
+            <h3 id="currencyResult"></h3>
+        </div>
+
+        <!-- 4. مولد كلمات المرور -->
+        <div class="tool-section">
+            <h2>🔐 مولد كلمات المرور</h2>
+            <p>الطول: <input type="number" id="passLen" value="12" style="width: 60px;"></p>
+            <button onclick="generatePassword()">توليد</button>
+            <h3 id="passwordResult"></h3>
+        </div>
+
+        <!-- 5. حاسبة BMI -->
+        <div class="tool-section">
+            <h2>💪 حاسبة BMI</h2>
+            <p>الوزن (كجم): <input type="number" id="weight" style="width: 80px;"></p>
+            <p>الطول (سم): <input type="number" id="height" style="width: 80px;"></p>
+            <button onclick="calculateBMI()">احسب</button>
+            <h3 id="bmiResult"></h3>
+        </div>
+
+        <!-- 6. حاسبة السعرات الحرارية -->
+        <div class="tool-section">
+            <h2>🔥 حاسبة السعرات الحرارية</h2>
+            <p>الوزن (كجم): <input type="number" id="calWeight" style="width: 80px;"></p>
+            <p>الطول (سم): <input type="number" id="calHeight" style="width: 80px;"></p>
+            <p>العمر: <input type="number" id="calAge" style="width: 80px;"></p>
+            <button onclick="calculateCalories()">احسب</button>
+            <h3 id="caloriesResult"></h3>
+        </div>
+
+        <!-- 7. حاسبة تحويل المقادير -->
+        <div class="tool-section">
+            <h2>🍳 حاسبة تحويل المقادير</h2>
+            <p>عدد الأكواب: <input type="number" id="cups" style="width: 80px;"></p>
+            <button onclick="convertCups()">تحويل</button>
+            <h3 id="cookingResult"></h3>
+        </div>
+
+        <!-- 8. عدّاد الكلمات -->
+        <div class="tool-section">
+            <h2>🔤 عدّاد الكلمات</h2>
+            <textarea id="text" rows="5" cols="40" placeholder="اكتب هنا..."></textarea>
+            <br>
+            <button onclick="countWords()">عدّ</button>
+            <h3 id="wordCountResult"></h3>
+        </div>
+
+        <!-- 9. مولد الألوان -->
+        <div class="tool-section">
+            <h2>🎨 مولد الألوان</h2>
+            <button onclick="generateColor()">توليد اللون</button>
+            <h3 id="colorResult"></h3>
+        </div>
+
+        <!-- 10. محول درجات الحرارة -->
+        <div class="tool-section">
+            <h2>🌡️ محول درجات الحرارة</h2>
+            <p>درجة الحرارة: <input type="number" id="temp" style="width: 80px;"></p>
+            <button onclick="convertTemp()">تحويل</button>
+            <h3 id="tempResult"></h3>
+        </div>
+
+        <!-- منصات الربح -->
+        <div class="tool-section">
+            <h2>💰 منصات الربح الموثوقة</h2>
+            <p>استكشف هذه المنصات واكسب مكافآت حقيقية:</p>
+            <div class="earn-links">
+                <a href="https://cointiply.mobi/VOE90v" target="_blank">🪙 Cointiply</a>
+                <a href="https://faucetpay.io/r/9834759" target="_blank">💰 FaucetPay</a>
+                <a href="https://www.coinpayu.com/?r=EeRd" target="_blank">🎮 CoinPayu</a>
+                <a href="https://freecash.com/r/364JFQ" target="_blank">🎁 Freecash</a>
+                <a href="https://pawns.app/?r=20432610" target="_blank">📶 Pawns.app</a>
+            </div>
         </div>
     </section>
 
     <footer class="footer">
         <p>&copy; 2026 Micro-Tool Hub - جميع الحقوق محفوظة</p>
     </footer>
+
+    <script>
+        function calculatePercent() {
+            var p1 = document.getElementById('p1').value;
+            var p2 = document.getElementById('p2').value;
+            document.getElementById('percentResult').textContent = 'النتيجة: ' + (p1 / 100) * p2;
+        }
+
+        function calculateAge() {
+            var dob = new Date(document.getElementById('dob').value);
+            var now = new Date();
+            var age = Math.floor((now - dob) / (365.25 * 24 * 60 * 60 * 1000));
+            document.getElementById('ageResult').textContent = 'عمرك: ' + age + ' سنة';
+        }
+
+        function convertCurrency() {
+            var amount = document.getElementById('amount').value;
+            var from = document.getElementById('from').value;
+            var to = document.getElementById('to').value;
+            document.getElementById('currencyResult').textContent = 'النتيجة: ' + (amount * from / to) + ' وحدة';
+        }
+
+        function generatePassword() {
+            var length = document.getElementById('passLen').value;
+            var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()";
+            var password = "";
+            for (var i = 0; i < length; i++) {
+                password += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            document.getElementById('passwordResult').textContent = 'كلمة المرور: ' + password;
+        }
+
+        function calculateBMI() {
+            var weight = document.getElementById('weight').value;
+            var height = document.getElementById('height').value / 100;
+            var bmi = weight / (height * height);
+            document.getElementById('bmiResult').textContent = 'مؤشر كتلة الجسم: ' + bmi.toFixed(2);
+        }
+
+        function calculateCalories() {
+            var weight = document.getElementById('calWeight').value;
+            var height = document.getElementById('calHeight').value;
+            var age = document.getElementById('calAge').value;
+            var bmr = 10 * weight + 6.25 * height - 5 * age + 5;
+            document.getElementById('caloriesResult').textContent = 'سعراتك اليومية: ' + bmr.toFixed(0) + ' سعرة حرارية';
+        }
+
+        function convertCups() {
+            var cups = document.getElementById('cups').value;
+            document.getElementById('cookingResult').textContent = 'المقدار بالجرام: ' + (cups * 240).toFixed(0) + ' غرام';
+        }
+
+        function countWords() {
+            var text = document.getElementById('text').value;
+            document.getElementById('wordCountResult').textContent = 'الكلمات: ' + text.trim().split(/\s+/).length + ' | الحروف: ' + text.length;
+        }
+
+        function generateColor() {
+            var color = '#' + Math.floor(Math.random()*16777215).toString(16);
+            document.body.style.backgroundColor = color;
+            document.getElementById('colorResult').textContent = 'اللون: ' + color;
+        }
+
+        function convertTemp() {
+            var temp = document.getElementById('temp').value;
+            document.getElementById('tempResult').textContent = 'فهرنهايت: ' + (temp * 9/5 + 32) + ' | مئوية: ' + temp;
+        }
+    </script>
 </body>
 </html>
