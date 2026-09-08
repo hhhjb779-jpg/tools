@@ -10,11 +10,11 @@
         .header { text-align: center; padding: 30px; background: linear-gradient(135deg, #38bdf8, #0ea5e9); border-radius: 15px; margin-bottom: 30px; }
         .header h1 { font-size: 3rem; }
         .header p { font-size: 1.2rem; color: #e0f2fe; }
-        .tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
-        .tool-card { background: #0f172a; padding: 25px; border-radius: 15px; text-align: center; border: 1px solid #334155; transition: 0.3s; }
-        .tool-card:hover { border-color: #38bdf8; transform: translateY(-5px); }
-        .tool-card h3 { margin-bottom: 10px; }
-        .btn { display: inline-block; padding: 10px 20px; border-radius: 8px; background: #38bdf8; color: #0f172a; font-weight: bold; text-decoration: none; margin-top: 10px; }
+        .tool-section { background: #0f172a; padding: 25px; border-radius: 15px; margin-bottom: 20px; border: 1px solid #334155; }
+        .tool-section h2 { margin-bottom: 15px; }
+        .tool-section input, .tool-section textarea { padding: 10px; border: 1px solid #334155; border-radius: 5px; background: #1e293b; color: #fff; margin: 5px; }
+        .tool-section button { background: #38bdf8; color: #0f172a; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; }
+        .tool-section h3 { margin-top: 15px; }
         .earn-links { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 20px; }
         .earn-links a { background: #38bdf8; padding: 10px 20px; color: #fff; text-decoration: none; border-radius: 5px; }
         .footer { text-align: center; padding: 20px; margin-top: 40px; border-top: 1px solid #334155; color: #64748b; }
@@ -26,62 +26,93 @@
         <p>أدوات مجانية تحتاجها يومياً!</p>
     </div>
 
-    <div class="tools-grid">
-        <div class="tool-card">
-            <h3>📊 حاسبة النسبة المئوية</h3>
-            <p>احسب النسب بسهولة</p>
-            <button class="btn" onclick="window.location.href='#percent'">استخدم</button>
-        </div>
-        <div class="tool-card">
-            <h3>📅 حاسبة العمر</h3>
-            <p>احسب عمرك بالتفصيل</p>
-            <button class="btn" onclick="window.location.href='#age'">استخدم</button>
-        </div>
-        <div class="tool-card">
-            <h3>💱 محول العملات</h3>
-            <p>حول العملات الأساسية</p>
-            <button class="btn" onclick="window.location.href='#currency'">استخدم</button>
-        </div>
-        <div class="tool-card">
-            <h3>🔐 مولد كلمات المرور</h3>
-            <p>أنشئ كلمة مرور قوية</p>
-            <button class="btn" onclick="window.location.href='#password'">استخدم</button>
-        </div>
-        <div class="tool-card">
-            <h3>💪 حاسبة BMI</h3>
-            <p>احسب مؤشر كتلة جسمك</p>
-            <button class="btn" onclick="window.location.href='#bmi'">استخدم</button>
-        </div>
-        <div class="tool-card">
-            <h3>🔥 حاسبة السعرات الحرارية</h3>
-            <p>احسب سعراتك اليومية</p>
-            <button class="btn" onclick="window.location.href='#calories'">استخدم</button>
-        </div>
-        <div class="tool-card">
-            <h3>🍳 حاسبة تحويل المقادير</h3>
-            <p>حول الجرامات إلى أكواب</p>
-            <button class="btn" onclick="window.location.href='#cooking'">استخدم</button>
-        </div>
-        <div class="tool-card">
-            <h3>🔤 عدّاد الكلمات</h3>
-            <p>احسب عدد الكلمات والحروف</p>
-            <button class="btn" onclick="window.location.href='#wordcount'">استخدم</button>
-        </div>
-        <div class="tool-card">
-            <h3>🎨 مولد الألوان</h3>
-            <p>أنشئ ألواناً عشوائية</p>
-            <button class="btn" onclick="window.location.href='#color'">استخدم</button>
-        </div>
-        <div class="tool-card">
-            <h3>🌡️ محول درجات الحرارة</h3>
-            <p>حول درجات الحرارة</p>
-            <button class="btn" onclick="window.location.href='#temperature'">استخدم</button>
-        </div>
+    <!-- 1. حاسبة النسبة المئوية -->
+    <div class="tool-section">
+        <h2>📊 حاسبة النسبة المئوية</h2>
+        <p>ما هو <input type="number" id="p1" style="width: 80px;"> % من <input type="number" id="p2" style="width: 80px;"> ؟</p>
+        <button onclick="calculatePercent()">احسب</button>
+        <h3 id="percentResult"></h3>
+    </div>
+
+    <!-- 2. حاسبة العمر -->
+    <div class="tool-section">
+        <h2>📅 حاسبة العمر</h2>
+        <p>تاريخ ميلادك: <input type="date" id="dob"></p>
+        <button onclick="calculateAge()">احسب</button>
+        <h3 id="ageResult"></h3>
+    </div>
+
+    <!-- 3. محول العملات -->
+    <div class="tool-section">
+        <h2>💱 محول العملات</h2>
+        <p>المبلغ: <input type="number" id="amount" style="width: 100px;"></p>
+        <p>من <select id="from"><option value="1">دولار</option><option value="0.85">يورو</option></select> إلى <select id="to"><option value="1">دولار</option><option value="0.85">يورو</option></select></p>
+        <button onclick="convertCurrency()">تحويل</button>
+        <h3 id="currencyResult"></h3>
+    </div>
+
+    <!-- 4. مولد كلمات المرور -->
+    <div class="tool-section">
+        <h2>🔐 مولد كلمات المرور</h2>
+        <p>الطول: <input type="number" id="passLen" value="12" style="width: 60px;"></p>
+        <button onclick="generatePassword()">توليد</button>
+        <h3 id="passwordResult"></h3>
+    </div>
+
+    <!-- 5. حاسبة BMI -->
+    <div class="tool-section">
+        <h2>💪 حاسبة BMI</h2>
+        <p>الوزن (كجم): <input type="number" id="weight" style="width: 80px;"></p>
+        <p>الطول (سم): <input type="number" id="height" style="width: 80px;"></p>
+        <button onclick="calculateBMI()">احسب</button>
+        <h3 id="bmiResult"></h3>
+    </div>
+
+    <!-- 6. حاسبة السعرات الحرارية -->
+    <div class="tool-section">
+        <h2>🔥 حاسبة السعرات الحرارية</h2>
+        <p>الوزن (كجم): <input type="number" id="calWeight" style="width: 80px;"></p>
+        <p>الطول (سم): <input type="number" id="calHeight" style="width: 80px;"></p>
+        <p>العمر: <input type="number" id="calAge" style="width: 80px;"></p>
+        <button onclick="calculateCalories()">احسب</button>
+        <h3 id="caloriesResult"></h3>
+    </div>
+
+    <!-- 7. حاسبة تحويل المقادير -->
+    <div class="tool-section">
+        <h2>🍳 حاسبة تحويل المقادير</h2>
+        <p>عدد الأكواب: <input type="number" id="cups" style="width: 80px;"></p>
+        <button onclick="convertCups()">تحويل</button>
+        <h3 id="cookingResult"></h3>
+    </div>
+
+    <!-- 8. عدّاد الكلمات -->
+    <div class="tool-section">
+        <h2>🔤 عدّاد الكلمات</h2>
+        <textarea id="text" rows="5" cols="40" placeholder="اكتب هنا..."></textarea>
+        <br>
+        <button onclick="countWords()">عدّ</button>
+        <h3 id="wordCountResult"></h3>
+    </div>
+
+    <!-- 9. مولد الألوان -->
+    <div class="tool-section">
+        <h2>🎨 مولد الألوان</h2>
+        <button onclick="generateColor()">توليد اللون</button>
+        <h3 id="colorResult"></h3>
+    </div>
+
+    <!-- 10. محول درجات الحرارة -->
+    <div class="tool-section">
+        <h2>🌡️ محول درجات الحرارة</h2>
+        <p>درجة الحرارة: <input type="number" id="temp" style="width: 80px;"></p>
+        <button onclick="convertTemp()">تحويل</button>
+        <h3 id="tempResult"></h3>
     </div>
 
     <!-- منصات الربح الموثوقة -->
     <div class="tool-section">
-        <h2 style="text-align: center; margin-top: 40px;">💰 منصات الربح الموثوقة</h2>
+        <h2 style="text-align: center;">💰 منصات الربح الموثوقة</h2>
         <div class="earn-links">
             <a href="https://cointiply.mobi/VOE90v" target="_blank">🪙 Cointiply</a>
             <a href="https://faucetpay.io/r/9834759" target="_blank">💰 FaucetPay</a>
@@ -185,21 +216,5 @@
             document.getElementById('tempResult').textContent = 'فهرنهايت: ' + (temp * 9/5 + 32) + ' | مئوية: ' + temp;
         }
     </script>
-
-    <!-- إعلان Adsterra 1 -->
-    <script src="https://pl31234602.profitableratecpmnetwork.com/74/1d/52/741d524071b6f97ea692dd945ce18c9b.js"></script>
-    <!-- إعلان Adsterra 2 -->
-    <script>
-      atOptions = {
-        'key' : 'ce68676d1f7a828e05fd3b8862501acb',
-        'format' : 'iframe',
-        'height' : 60,
-        'width' : 468,
-        'params' : {}
-      };
-    </script>
-    <script src="https://www.highrevenueformat.com/ce68676d1f7a828e05fd3b8862501acb/invoke.js"></script>
-    <!-- إعلان Adsterra 3 -->
-    <script src="https://pl31234605.profitableratecpmnetwork.com/bf/73/82/bf73822d8d35b644f3733791d0064752.js"></script>
 </body>
 </html>
